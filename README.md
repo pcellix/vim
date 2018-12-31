@@ -1,8 +1,10 @@
 VIM
 =========
 
-A brief description of the role goes here. Setups vim and .vimrc
-Download the following plugins:
+A brief description of the role goes here. Setups vim and .vimrc 
+
+
+Downloads the following plugins:
   - NERDTree
 
 
