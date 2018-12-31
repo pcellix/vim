@@ -1,0 +1,6 @@
+---
+# tasks file for vim
+- name: Install vim and git
+  homebrew:
+    name: "{{ deps }}"
+    state: latest

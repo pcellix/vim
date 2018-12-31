@@ -1,0 +1,12 @@
+---
+
+# defaults file for vim
+deps:
+  - vim
+  - git
+pathogen_dir:  $HOME/.vim/autoload
+pathogen_url: https://tpo.pe/pathogen.vim 
+nerdtree_repo: https://github.com/scrooloose/nerdtree.git
+nerdtree_dest: $HOME/.vim/bundle/nerdtree     
+vimrc_src:  .vimrc
+vimrc_dest: $HOME/.vimrc

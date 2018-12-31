@@ -1,0 +1,7 @@
+---
+# tasks file for vim
+- name: Install vim and git
+  become: yes
+  yum:
+    name: "{{ deps }}"
+    state: latest

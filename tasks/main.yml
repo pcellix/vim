@@ -1,0 +1,34 @@
+---
+# tasks file for vim
+
+- name: Debug var
+  debug:
+    var: ansible_os_family
+
+- include_tasks: setupMacos.yml
+  when: ansible_os_family == "Darwin"
+
+- include_tasks: setupRedHat.yml
+  when: ansible_os_family == "RedHat"
+
+- include_tasks: setupDebian.yml
+  when: ansible_os_family == "Debian"
+
+- name: make dir for pathogen
+  file:
+    path: "{{ pathogen_dir }}" 
+    state: directory
+
+- name: Download pathogen
+  get_url:
+    url: "{{ pathogen_url }}" 
+    dest: "{{ pathogen_dir }}" 
+
+- name: Clone plugin
+  git: 
+    repo: "{{ nerdtree_repo }}" 
+    dest: "{{ nerdtree_dest }}" 
+- name: copy vim.rc
+  copy:
+    src: "{{ vimrc_src }}"
+    dest: "{{ vimrc_dest }}"
