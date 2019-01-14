@@ -39,6 +39,7 @@
     cp $HOME/.vimrc $HOME/vimrc.bak
   args:
     creates: $HOME/vimrc.bak
+  when: vimrcexists.stat.exists
 
 - name: copy vim.rc
   copy:
