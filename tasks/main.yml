@@ -28,6 +28,18 @@
   git: 
     repo: "{{ nerdtree_repo }}" 
     dest: "{{ nerdtree_dest }}" 
+
+- name: check if vimrc exists
+  stat: 
+    path: "{{ vimrc_dest }}"
+  register: vimrcexists
+
+- name: backupvimrc
+  command: >
+    cp $HOME/.vimrc $HOME/vimrc.bak
+  args:
+    creates: $HOME/vimrc.bak
+
 - name: copy vim.rc
   copy:
     src: "{{ vimrc_src }}"
