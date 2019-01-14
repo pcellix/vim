@@ -17,17 +17,17 @@ How to run
 ----------
 
 After clone Prepare the following playbook.yml file with the content
-
+```
 - hosts: all
   connection: local
   become: yes
   roles:
     - vim 
-
+```
 Please also prepare the inventory file call it 'inventory' with the content as follows:
-
+```
 [local]
 127.0.0.1
-
+```
 Then please run ansible-playbook -i inventory playbook.yml
 The files should one level outside this repository not within it
